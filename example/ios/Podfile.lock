@@ -1,0 +1,35 @@
+PODS:
+  - context_sdk (0.0.1):
+    - ContextSDK (= 4.5.1)
+    - Flutter
+  - ContextSDK (4.5.1)
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - context_sdk (from `.symlinks/plugins/context_sdk/ios`)
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  trunk:
+    - ContextSDK
+
+EXTERNAL SOURCES:
+  context_sdk:
+    :path: ".symlinks/plugins/context_sdk/ios"
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  context_sdk: b6198011b4c77aaee2045e06268c84ca051fe4f1
+  ContextSDK: 7057a6981a3f706ce8b874b397463c89f5c13e53
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+
+PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
+
+COCOAPODS: 1.15.2
