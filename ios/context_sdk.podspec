@@ -26,5 +26,5 @@ A Flutter plugin for ContextSDK.
   # plugin's privacy impact, and then uncomment this line. For more information,
   # see https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
   s.resource_bundles = {'context_sdk_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
-  s.dependency("ContextSDK", '4.5.1')
+  s.dependency("ContextSDK", '4.6.0')
 end

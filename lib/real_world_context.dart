@@ -1,6 +1,6 @@
 import 'package:context_sdk/context_sdk_platform_interface.dart';
 
-/// /// Represents a full context event in a moment in time. Use [RealWorldContext.log] to log an event.
+/// Represents a full context event in a moment in time. Use [RealWorldContext.log] to log an event.
 class RealWorldContext {
   // Keeps the finalizer itself reachable, otherwise it might be disposed
   // before the finalizer callback gets a chance to run.
