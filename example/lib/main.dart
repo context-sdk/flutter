@@ -102,7 +102,7 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Track User Action')),
                 ElevatedButton(
                 onPressed: () async => {
-                       _contextSdkPlugin.calibrate("my_flow", 4, {
+                       _contextSdkPlugin.calibrate("my_flow", null, {
                         'string': 'string',
                         'int': 14,
                         'bool': true,
@@ -121,7 +121,7 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Calibrate')),
                 ElevatedButton(
                 onPressed: () async => {
-                       _contextSdkPlugin.optimize("my_flow", 4, {
+                       _contextSdkPlugin.optimize("my_flow", null, {
                         'string': 'string',
                         'int': 14,
                         'bool': true,
@@ -140,7 +140,7 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Optimize')),
                 ElevatedButton(
                 onPressed: () async => {
-                       _contextSdkPlugin.fetchContext("my_flow", 4, {
+                       _contextSdkPlugin.fetchContext("my_flow", 3, {
                         'string': 'string',
                         'int': 14,
                         'bool': true,
@@ -159,7 +159,7 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Fetch Context')),
                 ElevatedButton(
                 onPressed: () async => {
-                       _contextSdkPlugin.fetchContext("my_flow", 4, {
+                       _contextSdkPlugin.fetchContext("my_flow", 3, {
                         'string': 'string',
                         'int': 14,
                         'bool': true,
