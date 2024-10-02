@@ -98,7 +98,7 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Track User Action')),
             ElevatedButton(
                 onPressed: () async => {
-                      _contextSdkPlugin.calibrate("my_flow", null, {
+                      _contextSdkPlugin.calibrate("my_flow", customSignals: {
                         'string': 'string',
                         'int': 14,
                         'bool': true,
@@ -117,31 +117,61 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Calibrate')),
             ElevatedButton(
                 onPressed: () async => {
-                      _contextSdkPlugin.optimize("my_flow", null, {
-                        'string': 'string',
-                        'int': 14,
-                        'bool': true,
-                        'float': 1.124
-                      }, (value) async {
-                        print("Optimized context: ${await value.validate()}");
-                        value.appendOutcomeMetadata({
+                      _contextSdkPlugin.optimize("my_flow", (context) async {
+                        print("Optimized context: ${await context.validate()}");
+                        context.appendOutcomeMetadata({
                           'string': 'string',
                           'int': 14,
                           'bool': true,
                           'float': 1.124
                         });
-                        value.log(Outcome.positive);
+                        await context.log(Outcome.positive);
                       })
                     },
                 child: const Text('Optimize')),
             ElevatedButton(
                 onPressed: () async => {
-                      _contextSdkPlugin.fetchContext("my_flow", 3, {
+                      _contextSdkPlugin.optimize("my_flow", customSignals: {
                         'string': 'string',
                         'int': 14,
                         'bool': true,
                         'float': 1.124
-                      }).then((value) async {
+                      }, (context) async {
+                        print("Optimized context: ${await context.validate()}");
+                        context.appendOutcomeMetadata({
+                          'string': 'string',
+                          'int': 14,
+                          'bool': true,
+                          'float': 1.124
+                        });
+                        await context.log(Outcome.positive);
+                      })
+                    },
+                child: const Text('Optimize (Custom Signals)')),
+            ElevatedButton(
+                onPressed: () async => {
+                      _contextSdkPlugin.optimize("my_flow", maxDelay: 0,
+                          (context) async {
+                        print("Optimized context: ${await context.validate()}");
+                        context.appendOutcomeMetadata({
+                          'string': 'string',
+                          'int': 14,
+                          'bool': true,
+                          'float': 1.124
+                        });
+                        await context.log(Outcome.positive);
+                      })
+                    },
+                child: const Text('Optimize (Instant)')),
+            ElevatedButton(
+                onPressed: () async => {
+                      _contextSdkPlugin.fetchContext("my_flow", 3,
+                          customSignals: {
+                            'string': 'string',
+                            'int': 14,
+                            'bool': true,
+                            'float': 1.124
+                          }).then((value) async {
                         print("Fetch context: ${await value.validate()}");
                         value.appendOutcomeMetadata({
                           'string': 'string',
@@ -155,8 +185,8 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Fetch Context')),
             ElevatedButton(
                 onPressed: () async {
-                  final context = await _contextSdkPlugin.instantContext(
-                      "my_flow", 3, null);
+                  final context =
+                      await _contextSdkPlugin.instantContext("my_flow", 3);
                   print("Instant context: ${await context.validate()}");
                   if (await context.shouldUpsell()) {
                     await context.appendOutcomeMetadata({
