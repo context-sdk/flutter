@@ -50,10 +50,11 @@ class ContextSdk {
   }
 
   void calibrate(
-      String flowName,
-      int? maxDelay,
-      Map<String, dynamic>? customSignals,
-      ValueSetter<RealWorldContext> onContextReady) async {
+    String flowName,
+    ValueSetter<RealWorldContext> onContextReady, {
+    int? maxDelay,
+    Map<String, dynamic>? customSignals,
+  }) async {
     ContextSdkPlatform.instance.calibrate(flowName, maxDelay, customSignals,
         (contextId) {
       onContextReady(RealWorldContext(ContextIdHolder(contextId)));
@@ -66,10 +67,11 @@ class ContextSdk {
   ///
   /// [onGoodMoment] Will only be called if ContextSDK deems it a good moment, meaning it might never be called.
   void optimize(
-      String flowName,
-      int? maxDelay,
-      Map<String, dynamic>? customSignals,
-      ValueSetter<RealWorldContext> onGoodMoment) {
+    String flowName,
+    ValueSetter<RealWorldContext> onGoodMoment, {
+    int? maxDelay,
+    Map<String, dynamic>? customSignals,
+  }) {
     ContextSdkPlatform.instance.optimize(flowName, maxDelay, customSignals,
         (contextId) {
       onGoodMoment(RealWorldContext(ContextIdHolder(contextId)));
@@ -82,7 +84,7 @@ class ContextSdk {
   /// - [customSignals] A map of custom signals you want to add to the context
   /// Returns: A Future that resolves to a [RealWorldContext] object. If ContextSDK wasn't running this might take upto [duration] seconds to resolve, otherwise this will resolve instantly.
   Future<RealWorldContext> fetchContext(String flowName, int duration,
-      Map<String, dynamic>? customSignals) async {
+      {Map<String, dynamic>? customSignals}) async {
     final contextId = await ContextSdkPlatform.instance
         .fetchContext(flowName, duration, customSignals);
     return RealWorldContext(ContextIdHolder(contextId));
@@ -95,7 +97,7 @@ class ContextSdk {
   /// - [customSignals] A map of custom signals you want to add to the context
   /// Returns: A [RealWorldContext] object. This will always resolve instantly, but might lead to an incomplete context object if the duration wasn't reached.
   Future<RealWorldContext> instantContext(String flowName, int duration,
-      Map<String, dynamic>? customSignals) async {
+      {Map<String, dynamic>? customSignals}) async {
     final contextId = await ContextSdkPlatform.instance
         .instantContext(flowName, duration, customSignals);
     return RealWorldContext(ContextIdHolder(contextId));
