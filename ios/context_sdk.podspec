@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'context_sdk'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A Flutter plugin for ContextSDK.'
   s.description      = <<-DESC
 A Flutter plugin for ContextSDK.
@@ -26,5 +26,5 @@ A Flutter plugin for ContextSDK.
   # plugin's privacy impact, and then uncomment this line. For more information,
   # see https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
   s.resource_bundles = {'context_sdk_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
-  s.dependency("ContextSDK", '4.6.0')
+  s.dependency("ContextSDK", '4.7.0')
 end

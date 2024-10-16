@@ -1,8 +1,8 @@
 PODS:
-  - context_sdk (0.0.1):
-    - ContextSDK (= 4.5.1)
+  - context_sdk (1.1.0):
+    - ContextSDK (= 4.7.0)
     - Flutter
-  - ContextSDK (4.5.1)
+  - ContextSDK (4.7.0)
   - Flutter (1.0.0)
   - integration_test (0.0.1):
     - Flutter
@@ -25,8 +25,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  context_sdk: b6198011b4c77aaee2045e06268c84ca051fe4f1
-  ContextSDK: 7057a6981a3f706ce8b874b397463c89f5c13e53
+  context_sdk: efc62add93b61f6484f1231a31275b2b887c778d
+  ContextSDK: 236b175153ac3377d245fc5044a4c542b3692d0c
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
 
