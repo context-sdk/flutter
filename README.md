@@ -1,5 +1,11 @@
 # context_sdk
 
+[![pub version](https://img.shields.io/pub/v/context_sdk)](https://pub.dev/packages/context_sdk)
+[![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.decision.contextsdk.com/changelog/)
+[![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://docs.decision.contextsdk.com/)
+[![Issues](https://img.shields.io/github/issues/context-sdk/flutter)](https://github.com/context-sdk/flutter/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/flutter)](https://github.com/context-sdk/flutter/pulls)
+
 ContextSDK for Flutter
 
 ## Supported Platforms
@@ -8,6 +14,8 @@ ContextSDK for Flutter
 - Android - Coming Soon
 
 ## Overview
+
+Follow these steps to add ContextSDK to your app, and refer to the [official documentation](https://docs.decision.contextsdk.com/) for additional details and advanced configuration.
 
 - **Step 1**: Add ContextSDK to your app
 - **Step 2**: Track conversion events
