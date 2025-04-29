@@ -1,8 +1,8 @@
 # ContextSDK for Flutter
 
 [![pub version](https://img.shields.io/pub/v/context_sdk)](https://pub.dev/packages/context_sdk)
-[![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.decision.contextsdk.com/changelog/)
-[![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://docs.decision.contextsdk.com/)
+[![Changelog](https://img.shields.io/badge/changelog-latest-blue)](https://docs.contextsdk.com/other/changelog)
+[![Documentation](https://img.shields.io/badge/documentation-latest-blue)](https://docs.contextsdk.com/)
 [![Issues](https://img.shields.io/github/issues/context-sdk/flutter)](https://github.com/context-sdk/flutter/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/context-sdk/flutter)](https://github.com/context-sdk/flutter/pulls)
 
@@ -12,7 +12,7 @@ Our SDK supports iOS and will soon support Android, making it easy to integrate 
 
 ## Getting Started
 
-This repository is dedicated to managing releases of ContextSDK for Flutter, distributed via [pub.dev](https://pub.dev/packages/context_sdk). For other platforms, such as Swift and Android, or alternative installation methods like CocoaPods, please see our [official documentation](https://docs.decision.contextsdk.com/).
+This repository is dedicated to managing releases of ContextSDK for Flutter, distributed via [pub.dev](https://pub.dev/packages/context_sdk). For other platforms, such as Swift and Android, or alternative installation methods like CocoaPods, please see our [official documentation](https://docs.contextsdk.com/).
 
 To integrate ContextSDK into your Flutter project, follow these steps:
 
@@ -64,15 +64,15 @@ _contextSdkPlugin.optimize("upsell", null, null, (context) async {
 
 ### Going Live
 
-Once integrated, you're ready to ship your app update to the App Store and start leveraging real-world context insights.  Continue to the [release page](https://docs.insights.contextsdk.com/release/) for a final check before shipping, as well as other deployment tips.
+Once integrated, you're ready to ship your app update to the App Store and start leveraging real-world context insights.  Continue to the [release page](https://docs.contextsdk.com/context-decision/release-checklist) for a final check before shipping, as well as other deployment tips.
 
 ## Documentation
 
-For detailed setup instructions, usage examples, and advanced usage scenarios, visit our [official documentation](https://docs.decision.contextsdk.com/).
+For detailed setup instructions, usage examples, and advanced usage scenarios, visit our [official documentation](https://docs.contextsdk.com/).
 
 ## Not using ContextSDK yet?
 
-If you’re interested in adding real-world context insights to your app, you can [sign up here](https://console.contextsdk.com/register) to receive your license key and access. For more information about how ContextSDK can enhance your app’s user experience, visit our [website](https://contextsdk.com) or reach out to our team at support@contextsdk.com.
+If you’re interested in adding real-world context insights to your app, you can [sign up here](https://dashboard.contextsdk.com/register) to receive your license key and access. For more information about how ContextSDK can enhance your app’s user experience, visit our [website](https://contextsdk.com) or reach out to our team at support@contextsdk.com.
 
 ## Support
 
