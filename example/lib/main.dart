@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:context_sdk/context_sdk.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 
 void main() {
   runApp(const MyApp());
@@ -183,6 +184,24 @@ class _MyAppState extends State<MyApp> {
                       })
                     },
                 child: const Text('Fetch Context')),
+            ElevatedButton(
+                onPressed: () async => {
+                      _contextSdkPlugin
+                          .fetchContext("my_flow", 3)
+                          .then((value) async {
+                        print("Log Revenue Outcome: ${await value.validate()}");
+                        value.logRevenuOutcome(
+                            ProductDetails(
+                                id: 'a',
+                                currencyCode: 'eur',
+                                description: '',
+                                price: '',
+                                rawPrice: 1.24,
+                                title: ''),
+                            outcome: Outcome.positiveConverted);
+                      })
+                    },
+                child: const Text('Log Revenue Outcome')),
             ElevatedButton(
                 onPressed: () async {
                   final context =
