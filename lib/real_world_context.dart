@@ -1,4 +1,5 @@
 import 'package:context_sdk/context_sdk_platform_interface.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 
 /// Represents a full context event in a moment in time. Use [RealWorldContext.log] to log an event.
 class RealWorldContext {
@@ -43,6 +44,23 @@ class RealWorldContext {
 
     return ContextSdkPlatform.instance
         .contextLog(_contextId.contextId, outcome.value, true);
+  }
+
+  Future<void> logRevenuOutcome(ProductDetails product, {Outcome outcome = Outcome.positive}) {
+    if (!_contextId.isValid()) {
+      print(
+          "[ContextSDK] Invalid context received, please contact support@contextsdk.com");
+      return Future.value();
+    }
+
+    return appendOutcomeMetadata({
+      'ctx_revenue': product.rawPrice,
+      'ctx_currency': product.currencyCode,
+      'ctx_revenue_source': 'in_app_purchase',
+    })
+    .then((_) {
+      return log(outcome);
+    });
   }
 
   /// Use this function to log an outcome only if this particular context object hasn't been logged yet

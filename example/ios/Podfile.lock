@@ -1,15 +1,19 @@
 PODS:
   - context_sdk (1.1.0):
-    - ContextSDK (= 4.7.0)
+    - ContextSDK (= 5.5.0)
     - Flutter
-  - ContextSDK (4.7.0)
+  - ContextSDK (5.5.0)
   - Flutter (1.0.0)
+  - in_app_purchase_storekit (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - integration_test (0.0.1):
     - Flutter
 
 DEPENDENCIES:
   - context_sdk (from `.symlinks/plugins/context_sdk/ios`)
   - Flutter (from `Flutter`)
+  - in_app_purchase_storekit (from `.symlinks/plugins/in_app_purchase_storekit/darwin`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
 
 SPEC REPOS:
@@ -21,13 +25,16 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/context_sdk/ios"
   Flutter:
     :path: Flutter
+  in_app_purchase_storekit:
+    :path: ".symlinks/plugins/in_app_purchase_storekit/darwin"
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  context_sdk: efc62add93b61f6484f1231a31275b2b887c778d
-  ContextSDK: 236b175153ac3377d245fc5044a4c542b3692d0c
+  context_sdk: 2c25330d72b556e6eaa350390dcaf58dd70bc2d7
+  ContextSDK: d60b519ed075f919c636443698c8c9fbd1ba4510
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  in_app_purchase_storekit: a1ce04056e23eecc666b086040239da7619cd783
   integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
 
 PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
