@@ -1,5 +1,8 @@
 import 'package:context_sdk/context_sdk_platform_interface.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:in_app_purchase_storekit/in_app_purchase_storekit.dart';
+import 'package:in_app_purchase_storekit/store_kit_wrappers.dart';
+
 
 /// Represents a full context event in a moment in time. Use [RealWorldContext.log] to log an event.
 class RealWorldContext {
@@ -46,7 +49,7 @@ class RealWorldContext {
         .contextLog(_contextId.contextId, outcome.value, true);
   }
 
-  Future<void> logRevenuOutcome(ProductDetails product, {Outcome outcome = Outcome.positive}) {
+  Future<void> logRevenueOutcome(ProductDetails product, {Outcome outcome = Outcome.positive}) {
     if (!_contextId.isValid()) {
       print(
           "[ContextSDK] Invalid context received, please contact support@contextsdk.com");
@@ -57,6 +60,31 @@ class RealWorldContext {
       'ctx_revenue': product.rawPrice,
       'ctx_currency': product.currencyCode,
       'ctx_revenue_source': 'in_app_purchase',
+      'ctx_flutter_product_type': product.runtimeType.toString(),
+    })
+    .then((_) {
+      if (product is AppStoreProduct2Details) {
+        final subscription = product.sk2Product.subscription;
+        Map<String, dynamic> metadata = {
+          'ctx_recurrence': 'one_time_purchase',
+        };
+        if (subscription != null) {
+          metadata['ctx_recurrence_unit'] = subscription.subscriptionPeriod.unit.name;
+          metadata['ctx_recurrence_interval'] = subscription.subscriptionPeriod.value;
+          metadata['ctx_recurrence'] = 'recurring';
+
+          final promotionalOffer = subscription.promotionalOffers.firstOrNull;
+          if (promotionalOffer != null) {
+            metadata['ctx_intro_offer_price'] = promotionalOffer.price;
+            metadata['ctx_intro_offer_period'] = promotionalOffer.period.unit.name;
+            metadata['ctx_intro_offer_duration'] = promotionalOffer.period.value;
+          }
+        }
+        
+        return appendOutcomeMetadata(metadata);
+      } else {
+        return Future.value();
+      }
     })
     .then((_) {
       return log(outcome);

@@ -190,7 +190,7 @@ class _MyAppState extends State<MyApp> {
                           .fetchContext("my_flow", 3)
                           .then((value) async {
                         print("Log Revenue Outcome: ${await value.validate()}");
-                        value.logRevenuOutcome(
+                        value.logRevenueOutcome(
                             ProductDetails(
                                 id: 'a',
                                 currencyCode: 'eur',
