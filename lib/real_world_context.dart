@@ -81,6 +81,18 @@ class RealWorldContext {
         }
         
         return appendOutcomeMetadata(metadata);
+      } else if (product is AppStoreProductDetails) {
+        final subscription = product.skProduct.subscriptionPeriod;
+        Map<String, dynamic> metadata = {
+          'ctx_recurrence': 'one_time_purchase',
+        };
+        if (subscription != null) {
+          metadata['ctx_recurrence_unit'] = subscription.unit.name;
+          metadata['ctx_recurrence_interval'] = subscription.numberOfUnits;
+          metadata['ctx_recurrence'] = 'recurring';
+        }
+
+        return appendOutcomeMetadata(metadata);
       } else {
         return Future.value();
       }
