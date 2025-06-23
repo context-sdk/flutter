@@ -1,6 +1,6 @@
 name: context_sdk
 description: "ContextSDK for Flutter"
-version: 1.2.0
+version: 1.2.1
 homepage: https://contextsdk.com/
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  in_app_purchase: ^3.2.3
+  in_app_purchase: ^3.2.0
   in_app_purchase_storekit: ^0.4.0
 
 dev_dependencies:
